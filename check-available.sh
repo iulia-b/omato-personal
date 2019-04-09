@@ -13,17 +13,17 @@ wasShown=0
 
 
 while true
-do  
+do
     curl $url -o test.html
     result=$(pup '#tickets ul .onsale' < $filename)
 
     if [[ ${#result} -ge 1 && $wasShown -eq 0 ]]; then
         echo 'first brach'
-        let wasShown=1 
+        let wasShown=1
         osascript -e 'display alert "Buy the tickeeets"'
         # eval($send_mail)
     elif [ ${#result} -lt 1 ]; then
-        echo "nooo"
+        date "+no tickets at %H:%M:%S"
         let wasShown=0
     fi
 
