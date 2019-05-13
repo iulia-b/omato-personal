@@ -16,10 +16,10 @@ while true
 do
     curl $url -o test.html
     # result=$(pup '#tickets ul .onsale' < $filename)
-    result=$(pup '#tickets ul li.onsale p:contains("1st release")' < $filename)
+    result=$(pup '#tickets ul li.onsale p:contains("release")' < $filename)
 
     if [[ ${#result} -ge 4 && $wasShown -eq 0 ]]; then
-        echo 'first brach'
+        echo 'tickets available'
         let wasShown=1
         osascript -e 'display alert "Buy the tickeeets"'
         # eval($send_mail)
