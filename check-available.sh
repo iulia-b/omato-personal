@@ -28,5 +28,5 @@ do
         let wasShown=0
     fi
 
-    sleep 90
+    sleep 45
 done
