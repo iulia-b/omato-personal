@@ -8,6 +8,7 @@ struct Item {
   int wait;
 };
 
+// uninteneded changes 
 void interpolate(int start, int end, int intervalMS) {
   int sleepTime = intervalMS / abs(end-start); // this is the value you need to wait until you print next iteration
 
